@@ -1,3 +1,9 @@
+add_compile_definitions(
+    DELAY_MS 100
+    IN_PIN 6
+    OUT_PIN 7
+)
+
 # This is the main binary. List your C files here.
 add_executable(task_delay
     task_delay.c
@@ -17,6 +23,8 @@ target_link_libraries(task_delay PRIVATE
   pico_multicore
   pico_async_context_freertos
   FreeRTOS-Kernel-Heap4
+  hardware_rtc
+  pico_cyw43_arch_none
 )
 
 # The CYW43 is the Wifi/Bluetooth module. If the board is set to pico_w, this
@@ -35,5 +43,4 @@ find_program(OPENOCD openocd)
 find_program(PICOTOOL picotool)
 
 add_custom_target(flash ${PICOTOOL} load -f $<TARGET_FILE:task_delay> DEPENDS task_delay)
-
 add_custom_target(openocd_flash ${OPENOCD} -s ${OPENOCD_PATH} -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c 'adapter speed 5000; program "$<TARGET_FILE:task_delay>" verify reset exit' DEPENDS task_delay)

@@ -3,10 +3,6 @@
 #include <FreeRTOS.h>
 #include <task.h>
 
-#include "pico/cyw43_arch.h"
-
-#define OUT_PIN 1
-#define DELAY_MS 100
 
 void main_task(__unused void *params)
 {
