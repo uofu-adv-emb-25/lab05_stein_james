@@ -7,7 +7,6 @@
 #define IN_PIN 6
 #define OUT_PIN 7
 
-
 void main_task(__unused void *params)
 {
     int toggle = 0;
