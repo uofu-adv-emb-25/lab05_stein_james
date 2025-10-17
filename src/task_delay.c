@@ -2,15 +2,22 @@
 #include <pico/stdlib.h>
 #include <FreeRTOS.h>
 #include <task.h>
+#include <math.h>
 
 #define DELAY_MS 100
 #define IN_PIN 6
 #define OUT_PIN 7
+#define N 10000
 
 void main_task(__unused void *params)
 {
     int toggle = 0;
     while (1) {
+        for (int i = 0; i < N; i++) 
+            for (int i = 0; i < N; i++) 
+                for (int i = 0; i < N; i++) 
+                    sqrt(i);
+
         toggle = !toggle;
         gpio_put(OUT_PIN, toggle);
         vTaskDelay(pdMS_TO_TICKS(DELAY_MS));
