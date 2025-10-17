@@ -15,7 +15,7 @@ pico_set_program_version(task_delay "0.1")
 # Modify the below lines to enable/disable output over UART/USB.
 # These are mutually exclusive, only set one.
 pico_enable_stdio_uart(task_delay 1)
-pico_enable_stdio_usb(task_delay 0)
+pico_enable_stdio_usb(task_delay 1)
 
 # Add the libraries to the build
 target_link_libraries(task_delay PRIVATE
@@ -35,7 +35,7 @@ if(PICO_CYW43_SUPPORTED)
         pico_cyw43_arch_none
     )
 endif()
-
+    
 # Another pico macro which generates the uf2 file in addition to the elf
 pico_add_extra_outputs(task_delay)
 
