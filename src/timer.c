@@ -1,12 +1,26 @@
 #include <stdio.h>
 #include <pico/stdlib.h>
 #include <pico/sync.h>
+#include <math.h>
+
+
+#define DELAY_MS 100
+#define IN_PIN 6
+#define OUT_PIN 7
+#define N 10000
+
 
 int toggle = 1;
 bool timer_callback(__unused struct repeating_timer *t)
 {
     toggle = !toggle;
     gpio_put(OUT_PIN, toggle);
+
+    for (int i = 0; i < N; i++) 
+            for (int j = 0; j < N; j++) 
+                for (int k = 1; k < N; k++) 
+                    sqrt((float) i);
+
     return true;
 }
 
