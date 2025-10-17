@@ -15,8 +15,9 @@ void main_task(__unused void *params)
     while (1) {
         for (int i = 0; i < N; i++) 
             for (int j = 0; j < N; j++) 
-                for (int k = 0; k < N; k++) 
-                    sqrt(i);
+                for (int k = 1; k < N; k++) 
+                    sqrt((float) i);
+                    
 
         toggle = !toggle;
         gpio_put(OUT_PIN, toggle);
