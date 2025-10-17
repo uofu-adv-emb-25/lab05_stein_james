@@ -14,8 +14,8 @@ void main_task(__unused void *params)
     int toggle = 0;
     while (1) {
         for (int i = 0; i < N; i++) 
-            for (int i = 0; i < N; i++) 
-                for (int i = 0; i < N; i++) 
+            for (int j = 0; j < N; j++) 
+                for (int k = 0; k < N; k++) 
                     sqrt(i);
 
         toggle = !toggle;
