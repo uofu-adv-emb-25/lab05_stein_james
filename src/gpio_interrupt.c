@@ -2,6 +2,10 @@
 #include <pico/stdlib.h>
 #include <pico/sync.h>
 
+#define DELAY_MS 100
+#define IN_PIN 6
+#define OUT_PIN 7
+
 int toggle = 1;
 void irq_callback(uint gpio, uint32_t event_mask)
 {
