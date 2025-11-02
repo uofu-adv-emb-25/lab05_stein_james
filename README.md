@@ -1,10 +1,7 @@
-# Renode setup
-The Raspberry Pico needs configuration files for Renode to work properly.
+# Lab 5
+This is the Lab 5 repository for Stein Witt and James Semerad. The repository contains timer.c, gpio_interrupt.c, task_delay.c, and sleep.c in the src directory.
 
-* On MacOS, the installation location is `/Applications/Renode.app/Contents/MacOs`
-* On Linux, the location for Debian, Fedora, and Arch is `/opt/renode`
-* On Windows, the location is `C://Program Files/Renode`
+## sleep.c
+Toggles an out pin separated by a busy loop that does resource-intensive calculations.
 
-To add the Pico configuration files:
-1. Copy `rp2040_spinlock.py` and `rp2040_divider.py` to the `scripts/pydev` directory of your Renode installation.
-1. Copy `rpi_pico_rp2040_w.repl` to the `platforms/cpus` directory.
+## 
